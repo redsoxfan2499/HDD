@@ -1,3 +1,24 @@
 .site-header {
 	margin-bottom: 3em;
 }
+#hero {
+	display:flex;
+	justify-content: center;
+	padding: 75px 10px 5px 10px;
+}
+nav {
+	min-height: 60px;
+	background-color: transparent;
+}
+.scrolled {
+	background-color: #fff !important;
+	transition: background-color 200ms linear;
+	.nav-link,
+	.navbar-brand > a {
+		color: #000;
+	}
+}
+.nav-link,
+.navbar-brand > a {
+	color: #fff;
+}

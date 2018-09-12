@@ -29,8 +29,13 @@
 --------------------------------------------------------------*/
 @import "footer";
 
-body {
-	background-color: green;
+#masthead {
+	background: url('img/heroHomepage.svg');
+	background-color: lightgray;
+	height: 80vh;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 .site-content {
 	word-break: break-word;
