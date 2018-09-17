@@ -1,0 +1,29 @@
+<svg width="658" height="220" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="b">
+      <stop stop-color="#122A42" offset="0%"/>
+      <stop stop-color="#43576C" offset="100%"/>
+    </linearGradient>
+    <rect id="a" width="658" height="220" rx="20"/>
+    <circle id="e" cx="265" cy="265" r="265"/>
+    <filter x="-10.5%" y="-6.7%" width="120.9%" height="120.9%" filterUnits="objectBoundingBox" id="d">
+      <feMorphology radius=".5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"/>
+      <feOffset dy="20" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0" in="shadowBlurOuter1"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="c" fill="#fff">
+      <use xlink:href="#a"/>
+    </mask>
+    <use fill-opacity=".07" fill="url(#b)" xlink:href="#a"/>
+    <g mask="url(#c)" opacity=".36713">
+      <g transform="translate(-152 -161)">
+        <use fill="#000" filter="url(#d)" xlink:href="#e"/>
+        <use stroke-opacity=".5" stroke="#FFF" fill-opacity=".1" fill="#FFF" xlink:href="#e"/>
+      </g>
+    </g>
+  </g>
+</svg>

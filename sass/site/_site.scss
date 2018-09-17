@@ -29,14 +29,27 @@
 --------------------------------------------------------------*/
 @import "footer";
 
-#masthead {
-	background: url('img/heroHomepage.svg');
-	background-color: lightgray;
-	height: 80vh;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+html, body {
+	font-family: 'Raleway', sans-serif;
+}
+.site {
+	margin-top: 20px;
 }
 .site-content {
 	word-break: break-word;
+}
+.plugins {
+	clip-path: polygon(0 4vw,100% 0,100% 100%,0 calc(100% - 6vw));
+	// clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 6vw));
+	background: $mediumcyan;
+	color: $white;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.blogposts {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.bpcol {
+	padding-top: 20px;
 }

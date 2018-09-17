@@ -20,14 +20,16 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header d-flex justify-content-center" role="banner">
 	    <nav class="navbar navbar-expand-md fixed-top">
 	    	<div class="container">
-			   <div class="navbar-brand mb-0"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+			   	<div class="navbar-brand mb-0">
+				   <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				   	<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/hdLogosmall.png" />
+					</a>
+				</div>
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
 				</button>
 		   		<div class="collapse navbar-collapse" id="navbarNav">
 	            <?php
@@ -35,7 +37,7 @@
 	              'theme_location' => 'primary',
 	              'depth'      => 2,
 	              'container'  => false,
-	              'menu_class'     => 'navbar-nav',
+	              'menu_class'     => 'navbar-nav ml-auto',
 	              'walker'     => new Bootstrap_Walker_Nav_Menu()
 	              );
 	            if (has_nav_menu('primary')) {
@@ -45,22 +47,39 @@
 	          </div>
 
 	        </div>
-			</nav>
-			<section id="hero">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci eum placeat nulla 
-					ullam quibusdam blanditiis. Dicta dolores animi amet corrupti quod ducimus eligendi, 
-					temporibus inventore, maiores error velit, et rem!</p>
-				<p>Nostrum illo tenetur recusandae exercitationem asperiores veniam inventore, aperiam 
-					voluptate eligendi nisi minus quaerat quod ab accusamus. Expedita voluptatem modi 
-					tempore id eius blanditiis, quos cumque laudantium veritatis repellendus voluptates.</p>
-				<p>Non perspiciatis recusandae animi consequatur porro quam, nobis voluptatem dicta 
-					unde perferendis, exercitationem quisquam dignissimos nisi enim ab aperiam ipsum 
-					dolorem. Tempora amet natus ex exercitationem ratione eligendi vitae et?</p>
-				<p>Obcaecati nihil similique dicta, fugiat inventore voluptas? Quod aut, omnis, 
-					voluptates voluptatibus ex nulla, minima inventore nesciunt impedit tempora 
-					distinctio quisquam assumenda aliquam temporibus? Consequatur iure harum doloremque. 
-					Ipsa, nisi.</p>
-			</section>
+		</nav>
 	</header><!-- #masthead -->
+	<section class="hero" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/herobgImage.svg');">
+		<div class="jumbotron text-center align-self-center">
+			<div class="container">
+				<h1 class="jumbotron-heading">We Are WordPress / Laravel Enthusiasts!</h1>
+				<p class="lead text-muted">
+					We develop plugin, themes and anything else WordPress and Laravel Applications
+				</p>
+				<p>
+					<a href="#" class="btn btn-primary my-2">Our Work</a>
+				</p>
+			</div>
+		</div>
+		<div class="shout">
+			<div class="container text-center d-flex justify-content-center">
+				<div class="row shout-content">
+					<div class="c1 col-sm">
+						<p>WordPress is what we do. Need some WordPress help. Need a website converted to WordPress. 
+						Need to move a WordPress website. Need to update a WordPress site. Need Multisite Help. 
+						Need some custom functionality. Need a new theme. Need API help.
+						Laravel is also what we do. Need some Laravel help. Need a Laravel app. 
+						Need to move a Laravel website. Need to update a Laravel site.
+						Need some custom functionality. Need to create an API layer with Laravel.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<div id="content" class="site-content">
+	<div id="page" class="site">
+		<div id="content" class="site-content">
+
+			
+		
