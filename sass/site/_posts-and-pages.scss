@@ -18,9 +18,34 @@
 }
 
 .post-thumbnail {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
+  background-color: $mediumgray;
+  min-height: 175px;
 }
-
+.post-thumbnail:hover, 
+.btn:hover {
+  color: #7795f8;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.svg-inline--fa:hover {
+  color: $lightskyblue;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.shout-content:hover {
+  color: $lightskyblue;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.card-footer {
+  border-right: 1px solid rgba(0,0,0,0.125);
+  border-left: 1px solid rgba(0,0,0,0.125);
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+.post-cats {
+  font-size: 14px;
+}
 .entry-meta,
 .entry-footer {
   font-size: .75rem;

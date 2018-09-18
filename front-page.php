@@ -63,49 +63,41 @@ get_header(); ?>
 
     <div class="blogposts">
         <div class="container text-center d-flex justify-content-between">
-           
-            
             <div class="row bprow">
                 <?php if ( have_posts() ) :
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
-            ?>
-                <div class="bpcol col-sm-12 col-md-6">
+                ?>
+                <div class="bpcol col-sm-12 col-md-4">
                     <div class="card">
                         <?php if ( has_post_thumbnail() && is_single() ) : ?>
                             <div class="post-thumbnail">
-                                <img class="card-img-top" src="<?php the_post_thumbnail('full', array('class' => 'rounded')); ?>" alt="Card image cap">
+                                <?php the_post_thumbnail(); ?>
                             </div><!--  .post-thumbnail -->
                             <?php else : ?>
-                                <div class="post-thumbnail">
+                            <div class="post-thumbnail">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                                    <img class="card-img-top" src="<?php the_post_thumbnail('full', array('class' => 'rounded')); ?>" alt="Card image cap"> 
+                                    <?php the_post_thumbnail(); ?>
                                 </a>
                             </div><!--  .post-thumbnail -->
                         <?php endif; ?>
                         <div class="card-body">
-                            <h5 class="card-title"><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?></h5>
+                            <h4 class="card-title"><?php the_title(); ?></h4>
                             <p class="card-text">
-                                <?php
-                                the_content( sprintf(
-                                    /* translators: %s: Name of current post. */
-                                    wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'strappress' ), array( 'span' => array( 'class' => array() ) ) ),
-                                    the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                                ) );
-
-                                wp_link_pages( array(
-                                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'strappress' ),
-                                    'after'  => '</div>',
-                                ) );
+                            <?php
+                                the_excerpt();                               
                             ?>
                             </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                            <div class="card-footer text-muted">
-                                <?php strappress_entry_footer(); ?>
-                            </div>
+                            <p>
+                                <a href="<?php the_permalink(); ?>" class="btn btn-primary">Keep Reading...</a>
+                            </p>
+                           
                         </div>
                     </div>
-                </div>
+                     <div class="card-footer text-muted">
+                        <?php hdd_entry_footer(); ?>
+                    </div>
+                </div>   
                 <?php
                 endwhile;
 
@@ -114,7 +106,6 @@ get_header(); ?>
                 endif; 
             ?>
             </div>
-           
         </div>
     </div>
 

@@ -7,7 +7,7 @@
  * @package StrapPress
  */
 
-if ( ! function_exists( 'strappress_setup' ) ) :
+if ( ! function_exists( 'hdd_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'strappress_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function strappress_setup() {
+function hdd_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on StrapPress, use a find and replace
 	 * to change 'strappress' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'strappress', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'hdd', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function strappress_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'strappress' ),
+		'primary' => esc_html__( 'Primary', 'hdd' ),
 	) );
 
 	/*
@@ -60,7 +60,7 @@ function strappress_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'strappress_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'hdd_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -69,7 +69,7 @@ function strappress_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
-add_action( 'after_setup_theme', 'strappress_setup' );
+add_action( 'after_setup_theme', 'hdd_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -78,12 +78,23 @@ add_action( 'after_setup_theme', 'strappress_setup' );
  *
  * @global int $content_width
  */
-function strappress_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'strappress_content_width', 640 );
+function hdd_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'hdd_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'strappress_content_width', 0 );
+add_action( 'after_setup_theme', 'hdd_content_width', 0 );
 
+// Custom excerpt length 
+function hdd_custom_excerpt_length( $length ) {
+	return 40;
+}
+add_filter( 'excerpt_length', 'hdd_custom_excerpt_length', 999 );
 
+// add more link to excerpt
+function hdd_custom_excerpt_more($more) {
+   global $post;
+   return '';
+}
+add_filter('excerpt_more', 'hdd_custom_excerpt_more');
 /**
  * Add CSS/JS Scritps
  */

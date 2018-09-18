@@ -56,29 +56,24 @@ function strappress_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'strappress_entry_footer' ) ) :
+if ( ! function_exists( 'hdd_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function strappress_entry_footer() {
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() && is_single() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'strappress' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links"><i class="fas fa-tags"></i>' . esc_html__( '%1$s', 'strappress' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+function hdd_entry_footer() {
+	?>
+	<div class="post-date">
+		<i class="fas fa-calendar-alt"></i> <?php the_date(); ?>
+	</div>
+	<div class="post-cats"> 
+		<i class="fas fa-tags"></i> <?php $categories = get_the_category();
+		foreach( $categories as $cats )
+		{
+			echo $cats->cat_name . ', ';
 		}
-	}
-
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'strappress' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link float-right">',
-		'</span>', 0, 'btn btn-sm btn-danger'
-	);
+		?>
+	</div>
+	<?php
 }
 endif;
 
