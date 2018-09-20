@@ -95,6 +95,79 @@ function hdd_custom_excerpt_more($more) {
    return '';
 }
 add_filter('excerpt_more', 'hdd_custom_excerpt_more');
+
+/**
+ * Register widget area.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ */
+function hdd_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'hdd' ),
+		'id'            => 'sidebar-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar(array (
+		'name'			=> __('Footer One', 'hdd'),
+		'id'			=> 'footer-one-widget-area',
+		'description'	=> __('The first footer widget area', 'dir'),
+		'before_widget'	=> '',
+		'after_widget'	=> '',
+		) 
+	);
+	register_sidebar(array (
+		'name'			=> __('Footer Two', 'hdd'),
+		'id'			=> 'footer-two-widget-area',
+		'description'	=> __('The second footer widget area', 'dir'),
+		'before_widget'	=> '',
+		'after_widget'	=> '',
+		) 
+	);
+	register_sidebar(array (
+		'name'			=> __('Footer Three', 'hdd'),
+		'id'			=> 'footer-three-widget-area',
+		'description'	=> __('The third footer widget area', 'dir'),
+		'before_widget'	=> '',
+		'after_widget'	=> '',
+		) 
+	);
+}
+add_action( 'widgets_init', 'hdd_widgets_init' );
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Homepage Settings',
+		'menu_title'	=> 'Homepage',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+}
+
 /**
  * Add CSS/JS Scritps
  */

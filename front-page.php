@@ -17,20 +17,21 @@ get_header(); ?>
         <div class="container text-center d-flex justify-content-between">
             <div class="row">
                 <div class="c1 col-sm">
-                    <p class="widgets_icon"><i class="fab fa-wordpress fa-4x"></i></p>
-                    <p>We specialize in creating custom WordPress plugins. Custom plugins, custom databases, 
-                        custom wp_query, custom dashboards, we have done it.
+                    <p class="widgets_icon"><?php the_field('technology_one_icon', 'option'); ?></p>
+                    <p>
+                        <?php the_field('technology_one_content', 'option'); ?>
                     </p>
                 </div>
                 <div class="c2 col-sm">
-                    <p class="widgets_icon"><i class="fab fa-laravel fa-4x"></i></p>
-                    <p>We specialize in creating custom WordPress themes. Custom WordPress Responsive Themes 
-                        from scratch. Themes using Bootstrap and Foundation.
+                    <p class="widgets_icon"><?php the_field('technology_two_icon', 'option'); ?></p>
+                    <p>
+                        <?php the_field('technology_two_content', 'option'); ?>
                     </p>
                 </div>
                 <div class="c3 col-sm">
-                    <p class="widgets_icon"><i class="fab fa-php fa-4x"></i></p>
-                    <p>We pride ourselves on Customer Service. Besides loving WordPress, we love our Customers and make sure they are happy!
+                    <p class="widgets_icon"><?php the_field('technology_three_icon', 'option'); ?></p>
+                    <p>
+                        <?php the_field('technology_three_content', 'option'); ?>
                     </p>
                 </div>
             </div>
@@ -41,22 +42,17 @@ get_header(); ?>
         <div class="container text-center d-flex justify-content-between">
             <div class="row">
                 <div class="p1 col-sm">
-                    <p class="widgets_icon"><i class="fas fa-users fa-2x"></i></p>
-                    <p>We specialize in creating custom WordPress plugins. Custom plugins, custom databases, 
-                        custom wp_query, custom dashboards, we have done it.
+                    <p class="widgets_icon"><?php the_field('about_one_icon', 'option'); ?></p>
+                    <p>
+                        <?php the_field('about_one_content', 'option'); ?>
                     </p>
                 </div>
                 <div class="p2 col-sm">
-                    <p class="widgets_icon"><i class="fas fa-users fa-2x"></i></p>
-                    <p>We specialize in creating custom WordPress themes. Custom WordPress Responsive Themes 
-                        from scratch. Themes using Bootstrap and Foundation.
+                    <p class="widgets_icon"><?php the_field('about_two_icon', 'option'); ?></p>
+                    <p>
+                        <?php the_field('about_two_content', 'option'); ?>
                     </p>
                 </div>
-                <!-- <div class="p3 col-sm">
-                    <h5>Client Showcase</h5>
-                    <p>We pride ourselves on Customer Service. Besides loving WordPress, we love our Customers and make sure they are happy!
-                    </p>
-                </div> -->
             </div>
         </div>
     </div>
@@ -90,8 +86,7 @@ get_header(); ?>
                             </p>
                             <p>
                                 <a href="<?php the_permalink(); ?>" class="btn btn-primary">Keep Reading...</a>
-                            </p>
-                           
+                            </p>                           
                         </div>
                     </div>
                      <div class="card-footer text-muted">
@@ -100,17 +95,11 @@ get_header(); ?>
                 </div>   
                 <?php
                 endwhile;
-
 					the_posts_navigation();
-
                 endif; 
             ?>
             </div>
         </div>
     </div>
-
-	
-
 <?php
-
 get_footer();

@@ -16,31 +16,26 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
 			<div class="row prefooter">
-				<div class="col-md-3">
-					test test 
+				<div class="col-md-3 donate">
+					<?php
+							if(is_active_sidebar('footer-one-widget-area')){
+							dynamic_sidebar('footer-one-widget-area');
+							}
+					?>
 				</div>
-				<div class="col-md-3">
-					<h5>Recent Posts</h5>
-					<ul>
-						<li>test</li>
-						<li>test</li>
-						<li>test</li>
-					</ul>
+				<div class="col-md-3 recent-posts">
+					<?php
+							if(is_active_sidebar('footer-two-widget-area')){
+							dynamic_sidebar('footer-two-widget-area');
+							}
+					?>
 				</div>
-				<div class="col-md-6">
-					<h5 style="text-align:center;">Proudly built using...</h5>
-					<ul id="techicons">
-						<li><i class="fab fa-html5 fa-lg"></i></li>
-						<li><i class="fab fa-css3-alt fa-lg"></i></li>
-						<li><i class="fab fa-sass fa-lg"></i></li>
-						<li><i class="fab fa-js-square fa-lg"></i></li>
-						<li><i class="fab fa-php fa-lg"></i></li>
-						<li><i class="fab fa-wordpress fa-lg"></i></li>
-						<li><i class="fab fa-laravel fa-lg"></i></li>
-						<li><i class="fab fa-react fa-lg"></i></li>
-						<li><i class="fas fa-code-branch fa-lg"></i></li>
-						
-					</ul>
+				<div class="col-md-6 technology">
+					<?php
+							if(is_active_sidebar('footer-three-widget-area')){
+							dynamic_sidebar('footer-three-widget-area');
+							}
+					?>
 				</div>
 			</div>
 		</div><!--  .container -->
@@ -65,20 +60,13 @@
 		</div>
 		<div class="frow subfooter">
 			<div class="col-md-4 copyright">
-				<p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> <?php echo date('Y'); ?> Hyperdrive Designs</p>
+				<?php the_field('sub_footer_area_one', 'option'); ?><?php echo '&nbsp;' . date('Y'); ?>
 			</div>
 			<div class="col-md-4 seal">
-				<span id="siteseal">
-					<script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=Ri3x7GvXAxj9GpmERJc9TllYRLu56x5P5WwhfS5ZzbbNkM0jj6FSj3nHClP">
-					</script>
-					<!-- <img style="cursor:pointer;cursor:hand" src="https://seal.godaddy.com/images/3/en/siteseal_gd_3_h_d_m.gif" onclick="verifySeal();" alt="SSL site seal - click to verify"></span> -->
+				<?php the_field('sub_footer_area_two', 'option', false, false); ?>
 			</div>
 			<div class="col-md-4 legal">
-				<ul>
-					<li><a href="/legal-stuff/customer-terms-of-service-agreement">Legal Stuff</a></li>
-					<li><a href="/legal-stuff/privacy-policy">Privacy Policy</a></li>
-					<li><a href="/sitemap.html">Site Map</a></li>
-				</ul>
+				<?php the_field('sub_footer_area_three', 'option', false, false); ?>
 			</div>
 		</div>
 	</footer><!-- #colophon -->
