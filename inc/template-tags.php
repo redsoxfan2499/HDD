@@ -65,7 +65,7 @@ function hdd_entry_footer() {
 	<div class="post-date">
 		<i class="fas fa-calendar-alt"></i> <?php the_date(); ?>
 	</div>
-	<div class="post-cats"> 
+	<div class="post-cats">
 		<i class="fas fa-tags"></i> <?php $categories = get_the_category();
 		foreach( $categories as $cats )
 		{

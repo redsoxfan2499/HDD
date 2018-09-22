@@ -81,22 +81,24 @@ get_header(); ?>
                             <h4 class="card-title"><?php the_title(); ?></h4>
                             <p class="card-text">
                             <?php
-                                the_excerpt();                               
+                                the_excerpt();
                             ?>
                             </p>
                             <p>
                                 <a href="<?php the_permalink(); ?>" class="btn btn-primary">Keep Reading...</a>
-                            </p>                           
+                            </p>
+
                         </div>
+
                     </div>
                      <div class="card-footer text-muted">
-                        <?php hdd_entry_footer(); ?>
+                       <?php hdd_entry_footer(); ?>
                     </div>
-                </div>   
+                </div>
                 <?php
                 endwhile;
 					the_posts_navigation();
-                endif; 
+                endif;
             ?>
             </div>
         </div>
