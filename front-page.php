@@ -97,10 +97,13 @@ get_header(); ?>
                 </div>
                 <?php
                 endwhile;
-					the_posts_navigation();
+
                 endif;
-            ?>
+                ?>
             </div>
+        </div>
+        <div>
+          <a href="/blog" class="btn btn-primary">Read More Posts</a>
         </div>
     </div>
 <?php
