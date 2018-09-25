@@ -41,11 +41,12 @@ $downloads = get_posts( $args );
 
                     <article id="post-<?php echo $download->ID; ?>" <?php post_class(); ?>>
 
-                        <?php if ( has_post_thumbnail() ) : ?>
+                       
                             <div class="post-thumbnail">
+                                <img src="" />
                                 <?php the_post_thumbnail('full', array('class' => 'rounded')); ?>
                             </div><!--  .post-thumbnail -->
-                        <?php endif; ?>
+                        
 
                         <header class="entry-header">
                             <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
