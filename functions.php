@@ -214,6 +214,13 @@ $urls = array_diff( $urls, array( $emoji_svg_url ) );
 
 return $urls;
 }
+// add span to categories post count for categories widget
+add_filter('wp_list_categories', 'cat_count_span');
+function cat_count_span($links) {
+  $links = str_replace('</a> (', '</a> <span class="count">', $links);
+  $links = str_replace(')', '</span>', $links);
+  return $links;
+}
 /**
  * Add CSS/JS Scritps
  */

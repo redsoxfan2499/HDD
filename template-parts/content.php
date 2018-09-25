@@ -55,6 +55,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php strappress_entry_footer(); ?>
+		<?php hdd_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

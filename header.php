@@ -21,7 +21,7 @@
 
 <body <?php body_class(); ?>>
 	<header id="masthead" class="site-header d-flex justify-content-center" role="banner">
-	    <nav class="navbar navbar-expand-md fixed-top">
+	    <nav class="navbar navbar-expand-md fixed-top <?php if(!is_home() or !is_front_page()) { echo 'navbar-hdd'; } ?>">
 	    	<div class="container">
 			   	<div class="navbar-brand mb-0">
 				   	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
