@@ -73,6 +73,42 @@ ol, ul {
 	background: $passred !important;
 	color: $white;
 }
+.btn-trans {
+	background: transparent !important;
+	color: $white;
+	border: none !important;
+}
 .widget ul {
 	padding-left: 10px;
+}
+.wpcf7-submit {
+	background-color: $passred !important;
+	color: $white;
+	padding: 8px 15px;
+}
+.about {
+	padding-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	grid-gap: 7px;
+}
+
+#accordionExample .card-header {
+	background-image: url('http://localhost/hyperdrivedesigns/wp-content/themes/hdd/img/blue-triangles.svg');
+}
+.testimonials {
+	display: grid;
+	grid-template-columns: 150px auto;
+	padding-bottom: 20px;
+}
+
+.test-title {
+	display: grid;
+	grid-template-rows: repeat(10px 5em auto);
+}
+
+@media (max-width: 450px) { 
+	.testimonials {
+		grid-template-columns: 1fr;
+	}
 }

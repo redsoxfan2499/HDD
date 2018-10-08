@@ -18,7 +18,7 @@
 }
 .post-thumbnail {
   margin-bottom: 1em;
-  background-color: $mediumgray;
+  background-color: transparent;
   min-height: 175px;
 }
 .card:hover {
@@ -95,7 +95,7 @@
 }
 .entry-meta,
 .entry-footer {
-  font-size: .75rem;
+  font-size: 1rem;
   margin: .75em 0 2em;
 
   .svg-inline--fa {
@@ -161,6 +161,11 @@
    a {
      color: $white;
    }
+}
+.readmore {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 /* Screenreaders */
 .screen-reader-text {

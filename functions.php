@@ -167,6 +167,63 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 }
+// Register Custom Post Type
+function hdd_custom_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Testimonials', 'Post Type General Name', 'hdd' ),
+		'singular_name'         => _x( 'Testimonial', 'Post Type Singular Name', 'hdd' ),
+		'menu_name'             => __( 'Testimonials', 'hdd' ),
+		'name_admin_bar'        => __( 'Testimonials', 'hdd' ),
+		'archives'              => __( 'Item Archives', 'hdd' ),
+		'attributes'            => __( 'Item Attributes', 'hdd' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'hdd' ),
+		'all_items'             => __( 'All Testimonials', 'hdd' ),
+		'add_new_item'          => __( 'Add New Testimonial', 'hdd' ),
+		'add_new'               => __( 'Add New Testimonial', 'hdd' ),
+		'new_item'              => __( 'New Testimonial', 'hdd' ),
+		'edit_item'             => __( 'Edit Testimonial', 'hdd' ),
+		'update_item'           => __( 'Update Testimonial', 'hdd' ),
+		'view_item'             => __( 'View Testimonial', 'hdd' ),
+		'view_items'            => __( 'View Testimonials', 'hdd' ),
+		'search_items'          => __( 'Search Testimonial', 'hdd' ),
+		'not_found'             => __( 'Testimonial Not found', 'hdd' ),
+		'not_found_in_trash'    => __( 'Testimonial Not found in Trash', 'hdd' ),
+		'featured_image'        => __( 'Featured Image', 'hdd' ),
+		'set_featured_image'    => __( 'Set featured image', 'hdd' ),
+		'remove_featured_image' => __( 'Remove featured image', 'hdd' ),
+		'use_featured_image'    => __( 'Use as featured image', 'hdd' ),
+		'insert_into_item'      => __( 'Insert into item', 'hdd' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'hdd' ),
+		'items_list'            => __( 'Items list', 'hdd' ),
+		'items_list_navigation' => __( 'Items list navigation', 'hdd' ),
+		'filter_items_list'     => __( 'Filter items list', 'hdd' ),
+	);
+	$args = array(
+		'label'                 => __( 'Testimonial', 'hdd' ),
+		'description'           => __( 'testimonials from users', 'hdd' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor' ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-awards',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+		'show_in_rest'          => false,
+	);
+	register_post_type( 'testimonials', $args );
+
+}
+add_action( 'init', 'hdd_custom_post_type', 0 );
 /**
  * Disable the emoji's
  */

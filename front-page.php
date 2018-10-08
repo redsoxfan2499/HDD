@@ -100,11 +100,14 @@ get_header(); ?>
 
                 endif;
                 ?>
+
             </div>
+            
         </div>
-        <div>
-          <a href="/blog" class="btn btn-primary">Read More Posts</a>
-        </div>
+       
+    </div>
+     <div class="readmore">
+        <a href="/blog" class="btn btn-primary">Read More Posts</a>
     </div>
 <?php
 get_footer();

@@ -1,6 +1,29 @@
 /*--------------------------------------------------------------
 # Shop
 --------------------------------------------------------------*/
- .edd_downloads_list {
-    background: red;
+ .edd_download_columns_3 {
+    width: auto !important;
+}
+.edd_download {
+    width: auto !important;
+}
+.edd_downloads_list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+}
+.edd_download_inner {
+    display: grid;
+    justify-items: center !important;
+    padding: 10px 18px !important;
+}
+.entry-title {
+    color: $mediumturquoise;
+}
+.edd_download_title {
+    padding-top: 5px;
+}
+.single-download {
+    background-color: transparent;
+    display: grid;
+    justify-content: center;
 }
